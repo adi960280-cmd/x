@@ -63,7 +63,7 @@ buttons = InlineKeyboardMarkup([
                   InlineKeyboardButton("📓 Aᴘᴘx Aᴘᴘs", callback_data="appxlist")
                 ],
                 [
-                  InlineKeyboardButton("📝 Tᴇxᴛ ⟷ HTML", callback_data="converter_")
+                  InlineKeyboardButton("🌸 Tᴇxᴛ ⟷ HTML 🌸", callback_data="converter_")
                 ]
               ])
 
@@ -79,40 +79,40 @@ modes_button = [[
 
 
 custom_button = [[
-                  InlineKeyboardButton("⚡ Pᴡ ⚡", callback_data="pwwp"),
-                  InlineKeyboardButton("🔮 Aᴘᴘx 🔮", callback_data="appxwp"),
+                  InlineKeyboardButton("🌸 Pᴡ 🌸", callback_data="pwwp"),
+                  InlineKeyboardButton("❤️ Aᴘᴘx ❤️", callback_data="appxwp"),
                 ],[
-                  InlineKeyboardButton("🎯 CʟᴀssPʟᴜs 🎯", callback_data="cpwp")
-                  # InlineKeyboardButton("🎓 CDS Jᴏᴜʀɴᴇʏ 🎓", callback_data="cds_journey_free")
+                  InlineKeyboardButton("🎯 CʟᴀssPʟᴜs 🎯", callback_data="cpwp"),
+                  InlineKeyboardButton("🎓 CDS Jᴏᴜʀɴᴇʏ 🎓", callback_data="cds_journey_free")
                 ],[
                   InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="modes_")
                 ]]
 
 button1 = [              
                 [
-                    InlineKeyboardButton("👑 Aᴘɴɪ Kᴀᴋsʜᴀ", callback_data="ak_"),
-                    InlineKeyboardButton("👑 Aᴅᴅᴀ 𝟸𝟺𝟽", callback_data="adda_")
+                    InlineKeyboardButton("🌸 Aᴘɴɪ Kᴀᴋsʜᴀ", callback_data="ak_"),
+                    InlineKeyboardButton("🌸 Aᴅᴅᴀ 𝟸𝟺𝟽", callback_data="adda_")
                 ],
                 [
-                    InlineKeyboardButton("👑 CʟᴀssPʟᴜs", callback_data="classplus_"),
-                    InlineKeyboardButton("👑 Kʜᴀɴ Gs", callback_data="khan_")
+                    InlineKeyboardButton("🌸 CʟᴀssPʟᴜs", callback_data="classplus_"),
+                    InlineKeyboardButton("🌸 Kʜᴀɴ Gs", callback_data="khan_")
                 ],
                 [
-                    InlineKeyboardButton("👑 Pʜʏsɪᴄs Wᴀʟʟᴀʜ", callback_data="pw_"),
-                    InlineKeyboardButton("👑 Sᴛᴜᴅʏ IQ", callback_data="iq_")
+                    InlineKeyboardButton("🌸 Pʜʏsɪᴄs Wᴀʟʟᴀʜ", callback_data="pw_"),
+                    InlineKeyboardButton("🌸 Sᴛᴜᴅʏ IQ", callback_data="iq_")
                 ],
                 [
-                    InlineKeyboardButton("👑 Kᴅ Cᴀᴍᴘᴜs", callback_data="kdlive_"),
-                    InlineKeyboardButton("👑 Uᴛᴋᴀʀsʜ", callback_data="utkarsh_")
-                    # InlineKeyboardButton("👑 CDS Jᴏᴜʀɴᴇʏ", callback_data="cds_journey")
+                    InlineKeyboardButton("🌸 Kᴅ Cᴀᴍᴘᴜs", callback_data="kdlive_"),
+                    InlineKeyboardButton("🌸 Uᴛᴋᴀʀsʜ", callback_data="utkarsh_"),
+                    InlineKeyboardButton("🌸 CDS Jᴏᴜʀɴᴇʏ", callback_data="cds_journey")
                 ],
                 [
-                    InlineKeyboardButton("👑 Mʏ Pᴀᴛʜsʜᴀʟᴀ", callback_data="my_pathshala_"),
-                    InlineKeyboardButton("👑 ExᴀᴍPᴜʀ", callback_data="exampur_txt")
+                    InlineKeyboardButton("🌸 Mʏ Pᴀᴛʜsʜᴀʟᴀ", callback_data="my_pathshala_"),
+                    InlineKeyboardButton("🌸 ExᴀᴍPᴜʀ", callback_data="exampur_txt")
                 ],
                 [
-                    InlineKeyboardButton("👑 Vɪsɪᴏɴ Iᴀs", callback_data="vision_ias_"),
-                    InlineKeyboardButton("👑 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="maintainer_")
+                    InlineKeyboardButton("🌸 Vɪsɪᴏɴ Iᴀs", callback_data="vision_ias_"),
+                    InlineKeyboardButton("🌸 Rᴀɴᴋᴇʀs Gᴜʀᴜᴋᴜʟ", callback_data="rgvikram_txt")
                 ],
                 [
                     InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="modes_")
