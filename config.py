@@ -19,21 +19,21 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "8458169280"))
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1003014595955"))
 
 # //FORCE_CHANNEL_ID
-CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1003014595955")) 
+CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1002982741623")) 
 # ------------------------------------------------
 MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://ankush23:JYzSGlbjpFezDSWH@cluster0.ulzzd1m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 # -----------------------------------------------
 PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1003014595955"))
 # -----------------------------------------------
-join = '<a href="https://t.me/+CW3QMfc6JY83NzNl">✳️ JOIN BACKUP</a>'
+join = '<a href="https://t.me/+WQ_j-6VK8QwzYjRl">✳️ JOIN BACKUP</a>'
 # -----------------------------------------------
 UNSPLASH_ACCESS_KEY = 'RabDRmuXXBobanmwwbvpP5LwoG4J8ox34y5Sstz-9jk'
 # -----------------------------------------------
 UNSPLASH_QUERY = 'animal baby'
 # -----------------------------------------------
-ADMIN_BOT_USERNAME = "UGxPRO" #without @
+ADMIN_BOT_USERNAME = "𓍯𝙎𝙪𝙟𝙖𝙡⚝" #without @
 
-THUMB_URL = os.environ.get("THUMB_URL", "https://josephscollege.ac.in/wp-content/uploads/2022/04/1.jpg")
+THUMB_URL = os.environ.get("THUMB_URL", "https://i.ibb.co/60W9WcdM/file-358.jpg")
 
 
 
