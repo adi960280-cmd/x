@@ -31,7 +31,7 @@ UNSPLASH_ACCESS_KEY = 'RabDRmuXXBobanmwwbvpP5LwoG4J8ox34y5Sstz-9jk'
 # -----------------------------------------------
 UNSPLASH_QUERY = 'animal baby'
 # -----------------------------------------------
-ADMIN_BOT_USERNAME = "𓍯𝙎𝙪𝙟𝙖𝙡⚝" #without @
+ADMIN_BOT_USERNAME = "@zhonsnowchatbbot" #without @
 
 THUMB_URL = os.environ.get("THUMB_URL", "https://i.ibb.co/60W9WcdM/file-358.jpg")
 
