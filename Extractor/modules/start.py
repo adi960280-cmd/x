@@ -291,10 +291,10 @@ async def start(_, message):
         msg = await message.reply_text("🚀 Initializing System...")
 
         loading_frames = [
-            "🚀 Initializing System...\n【□□□□□□□□□□□□】 0%",
-            "🚀 Initializing System...\n【■■■■□□□□□□□□】 25%",
-            "🚀 Initializing System...\n【■■■■■■■■□□□□】 50%",
-            "🚀 Initializing System...\n【■■■■■■■■■■■■】 100%",
+            "🚀 Initializing System...\n【□□□□□□□□□□□□□□】 0%",
+            "🚀 Initializing System...\n【■■■■■□□□□□□□□□】 25%",
+            "🚀 Initializing System...\n【■■■■■■■■■□□□□□】 50%",
+            "🚀 Initializing System...\n【■■■■■■■■■■■■■■】 100%",
         ]
 
         for frame in loading_frames:
