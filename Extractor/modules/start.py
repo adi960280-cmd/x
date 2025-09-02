@@ -13,10 +13,10 @@ from Extractor import app
 from config import OWNER_ID, CHANNEL_ID
 from Extractor.core import script
 from Extractor.core.func import subscribe, chk_user
-# from Extractor.modules.cdsfree import handle_cds_journey, handle_cds_callback, handle_batch_message
-# from Extractor.modules.appex_v1 import api_v1
-# from Extractor.modules.appex_v2 import appex_v2_txt
-# from Extractor.modules.appex_v3 import appex_v5_txt
+from Extractor.modules.cdsfree import handle_cds_journey, handle_cds_callback, handle_batch_message
+from Extractor.modules.appex_v1 import api_v1
+from Extractor.modules.appex_v2 import appex_v2_txt
+from Extractor.modules.appex_v3 import appex_v5_txt
 from Extractor.modules.appex_v4 import appex_v5_txt
 from Extractor.modules.classplus import classplus_txt
 from Extractor.modules.pw import pw_login
@@ -39,7 +39,7 @@ from Extractor.modules.enc import *
 from Extractor.modules.freecp import *
 from Extractor.modules.freeappx import *
 from Extractor.modules.freepw import *
-# from Extractor.modules.cds import handle_cds_callback
+from Extractor.modules.cds import handle_cds_callback
 
 from Extractor.core.mongo import plans_db
 from telegram import Update
@@ -61,7 +61,8 @@ buttons = InlineKeyboardMarkup([
                   InlineKeyboardButton("Lᴏɢɪɴ/Wɪᴛʜᴏᴜᴛ Lᴏɢɪɴ", callback_data="modes_")
                 ],[
                   InlineKeyboardButton("🔍 Fɪɴᴅ Aᴘɪ", callback_data="findapi_"),
-                  InlineKeyboardButton("📓 Aᴘᴘx Aᴘᴘs", callback_data="appxlist")
+                  InlineKeyboardButton("📓 Aᴘᴘx Aᴘᴘs", callback_data="appxlist"),
+                  InlineKeyboardButton("📓 Aᴘᴘx Aᴘᴘs", callback_data="appxotp_")
                 ],
                 [
                   InlineKeyboardButton("🌸 Tᴇxᴛ ⟷ HTML 🌸", callback_data="converter_")
@@ -83,8 +84,8 @@ custom_button = [[
                   InlineKeyboardButton("🌸 Pᴡ 🌸", callback_data="pwwp"),
                   InlineKeyboardButton("❤️ Aᴘᴘx ❤️", callback_data="appxwp"),
                 ],[
-                  InlineKeyboardButton("🎯 CʟᴀssPʟᴜs 🎯", callback_data="cpwp")
-                  #InlineKeyboardButton("🎓 CDS Jᴏᴜʀɴᴇʏ 🎓", callback_data="cds_journey_free")
+                  InlineKeyboardButton("🎯 CʟᴀssPʟᴜs 🎯", callback_data="cpwp"),
+                  InlineKeyboardButton("🎓 CDS Jᴏᴜʀɴᴇʏ 🎓", callback_data="cds_journey_free")
                 ],[
                   InlineKeyboardButton("𝐁 𝐀 𝐂 𝐊", callback_data="modes_")
                 ]]
@@ -104,8 +105,8 @@ button1 = [
                 ],
                 [
                     InlineKeyboardButton("💀 Kᴅ Cᴀᴍᴘᴜs", callback_data="kdlive_"),
-                    InlineKeyboardButton("🦋 Uᴛᴋᴀʀsʜ", callback_data="utkarsh_")
-                   # InlineKeyboardButton("🌸 CDS Jᴏᴜʀɴᴇʏ", callback_data="cds_journey")
+                    InlineKeyboardButton("🦋 Uᴛᴋᴀʀsʜ", callback_data="utkarsh_"),
+                    InlineKeyboardButton("🌸 CDS Jᴏᴜʀɴᴇʏ", callback_data="cds_journey")
                 ],
                 [
                     InlineKeyboardButton("🎀 Mʏ Pᴀᴛʜsʜᴀʟᴀ", callback_data="my_pathshala_"),
@@ -707,6 +708,9 @@ async def handle_callback(client, query):
         api = "achieversacademyapi.classx.co.in"
         name = "Achievers Academy"
         await appex_v5_txt(app, query.message, api, name) 
+
+   elif query.data=="appxotp_":
+        await send_otpp(app, query.message)
 
     elif query.data == "commando_acc":
         api = "commandoacademyapi.appx.co.in"
