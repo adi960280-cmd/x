@@ -62,7 +62,6 @@ buttons = InlineKeyboardMarkup([
                 ],[
                   InlineKeyboardButton("🔍 Fɪɴᴅ Aᴘɪ", callback_data="findapi_"),
                   InlineKeyboardButton("📓 Aᴘᴘx Aᴘᴘs", callback_data="appxlist"),
-                  InlineKeyboardButton("📓 Aᴘᴘx Aᴘᴘs", callback_data="appxotp_")
                 ],
                 [
                   InlineKeyboardButton("🌸 Tᴇxᴛ ⟷ HTML 🌸", callback_data="converter_")
@@ -708,9 +707,6 @@ async def handle_callback(client, query):
         api = "achieversacademyapi.classx.co.in"
         name = "Achievers Academy"
         await appex_v5_txt(app, query.message, api, name) 
-
-   elif query.data=="appxotp_":
-        await send_otpp(app, query.message)
 
     elif query.data == "commando_acc":
         api = "commandoacademyapi.appx.co.in"
