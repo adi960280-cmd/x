@@ -271,31 +271,35 @@ def photo():
 
     # Keeping the old code as comment for reference
 
-# Random emoji list
-EMOJIS = ["🔥", "✨", "🚀", "🌟", "💫", "⚡", "🎯", "🎉", "❤️", "💎"]
+
+REACTIONS = ["🔥", "💥", "⚡", "✨", "😍", "🎉"]
 
 @app.on_message(filters.command("start"))  # & filters.user(SUDO_USERS))
 async def start(_, message):
     join = await subscribe(_, message)
     if join == 1:
         return
-    try:
-        # Random emoji select karo
-        emoji = random.choice(EMOJIS)
 
+    # Start pe random emoji react
+    try:
+        await message.react(emoji=random.choice(REACTIONS), big=True)
+    except Exception as e:
+        print(f"Reaction error: {e}")
+
+    try:
         await message.reply_photo(
             photo=photo(),
-            caption=f"{emoji} " + script.START_TXT.format(message.from_user.mention),
+            caption=script.START_TXT.format(message.from_user.mention),
             reply_markup=buttons
         )
     except Exception as e:
         print(f"Error in start command: {e}")
         # If photo fails, send message without photo
-        emoji = random.choice(EMOJIS)
         await message.reply_text(
-            f"{emoji} " + script.START_TXT.format(message.from_user.mention),
+            script.START_TXT.format(message.from_user.mention),
             reply_markup=buttons
         )
+
 
 @app.on_callback_query(filters.regex("^appxlist$"))
 async def show_alphabet(client, query):
