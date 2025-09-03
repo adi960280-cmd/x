@@ -270,22 +270,21 @@ def photo():
 
     # Keeping the old code as comment for reference
 
-
 REACTIONS = ["👀", "😱", "🔥", "😍", "🎉", "🥰", "😇", "⚡", "💥", "🤩"]
 
-@app.on_message(filters.command("start"))  # & filters.user(SUDO_USERS))
-async def start(_, message):
+@app.on_message(filters.command("start"))
+async def start_cmd(_, message):
     join = await subscribe(_, message)
     if join == 1:
         return
 
-    # Start pe random emoji react
+    # Random emoji react
     try:
         await message.react(emoji=random.choice(REACTIONS), big=True)
     except Exception as e:
         print(f"Reaction error: {e}")
 
-    # --- Initialization Animation ---
+    # Progress bar animation
     try:
         msg = await message.reply_text("🚀 Initializing System...")
 
@@ -298,17 +297,44 @@ async def start(_, message):
         ]
 
         for frame in loading_frames:
-            await asyncio.sleep(0.2)  # fast speed
+            await asyncio.sleep(0.2)
             await msg.edit_text(frame)
 
-        # last frame thoda dikhne ke baad delete
         await asyncio.sleep(0.5)
         await msg.delete()
-
     except Exception as e:
         print(f"Init animation error: {e}")
 
-    # --- Actual Start Message ---
+    # --- Alag alag block me messages ---
+    await message.reply_text(f"🌟 Welcome Dear {message.from_user.mention} !")
+
+    await message.reply_text(f"""
+🔻 Your Profile Information 🔻
+🆔 ID : <code>{message.from_user.id}</code>
+👤 UserName : {message.from_user.username or "N/A"}
+🌐 DC ID : {getattr(message.from_user, 'dc_id', 'N/A')}
+❄️ Frozen Status : False
+🎭 Scam Status : False
+""", parse_mode="html")
+
+    await message.reply_text("""
+🎯 Get Started
+1️⃣ Hit /extract to view Supported Platforms.
+2️⃣ Select Your Platform Preference.
+3️⃣ Start Extracting Your Contents.
+4️⃣ Download using our Uploader Bots.
+""")
+
+    await message.reply_text("Want to get started? hit /jhosn to start your Extraction")
+
+    await message.reply_text("⚠️ Note: Use for educational purposes only. Respect platform policies.")
+
+
+@app.on_message(filters.command("extract"))  # & filters.user(SUDO_USERS))
+async def extract_cmd(_, message):
+    join = await subscribe(_, message)
+    if join == 1:
+        return
     try:
         await message.reply_photo(
             photo=photo(),
@@ -316,7 +342,7 @@ async def start(_, message):
             reply_markup=buttons
         )
     except Exception as e:
-        print(f"Error in start command: {e}")
+        print(f"Error in extract command: {e}")
         # If photo fails, send message without photo
         await message.reply_text(
             script.START_TXT.format(message.from_user.mention),
