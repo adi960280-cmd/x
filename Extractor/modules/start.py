@@ -303,40 +303,29 @@ async def start_cmd(_, message):
     except Exception as e:
         print(f"Init animation error: {e}")
 
-    # --- Alag blocks with MarkdownV2 ---
-    await message.reply_text(
-        "🌟 *Welcome Dear* [{}](tg://user?id={}) 🌟".format(message.from_user.first_name, message.from_user.id),
-        parse_mode=ParseMode.MARKDOWN
-    )
+    # Ek hi message me sab blockquote ke sath
+    text = f"""
+<blockquote>🌟 <b>Welcome Dear</b> 🎵 <i>{message.from_user.first_name}</i> 🎵 🌟</blockquote>
 
-    await message.reply_text(
-        "🔻 *Your Profile Information* 🔻\n\n"
-        f"🆔 *ID* : `{message.from_user.id}`\n"
-        f"👤 *UserName* : `{message.from_user.username or 'N/A'}`\n"
-        f"🌐 *DC ID* : `{getattr(message.from_user, 'dc_id', 'N/A')}`\n"
-        f"❄️ *Frozen Status* : False\n"
-        f"🎭 *Scam Status* : False",
-        parse_mode=ParseMode.MARKDOWN
-    )
+<blockquote>🔻 <b>Your Profile Information</b> 🔻
+🆔 <b>ID</b> : <code>{message.from_user.id}</code>
+👤 <b>UserName</b> : {message.from_user.username or "N/A"}
+🌐 <b>DC ID</b> : {getattr(message.from_user, 'dc_id', 'N/A')}
+❄️ <b>Frozen Status</b> : False
+🎭 <b>Scam Status</b> : False</blockquote>
 
-    await message.reply_text(
-        "🎯 *Get Started*\n"
-        "1️⃣ Hit /extract to view Supported Platforms.\n"
-        "2️⃣ Select Your Platform Preference.\n"
-        "3️⃣ Start Extracting Your Contents.\n"
-        "4️⃣ Download using our Uploader Bots.",
-        parse_mode=ParseMode.MARKDOWN
-    )
+<blockquote>🎯 <b>Get Started</b>
+1️⃣ Hit /extract to view Supported Platforms.
+2️⃣ Select Your Platform Preference.
+3️⃣ Start Extracting Your Contents.
+4️⃣ Download using our Uploader Bots.</blockquote>
 
-    await message.reply_text(
-        "Want to get started? hit /extract to start your Extraction",
-        parse_mode=ParseMode.MARKDOWN
-    )
+<blockquote>Want to get started? hit /extract to start your Extraction</blockquote>
 
-    await message.reply_text(
-        "⚠️ *Note:* Use for educational purposes only.\nRespect platform policies.",
-        parse_mode=ParseMode.MARKDOWN
-    )
+<blockquote>⚠️ <b>Note:</b> Use for educational purposes only.  
+Respect platform policies.</blockquote>
+"""
+    await message.reply_text(text, parse_mode=ParseMode.HTML)
 
 @app.on_message(filters.command("extract"))  # & filters.user(SUDO_USERS))
 async def extract_cmd(_, message):
