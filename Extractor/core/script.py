@@ -5,15 +5,15 @@ from config import ADMIN_BOT_USERNAME
 # ------------------------------------------------------------ #
 
 START_TXT = """
-⫸ ʜᴇʏ {},  
+**<blockquote>⫸ ʜᴇʏ {}</blockquote>**  
 
 ╔═━━━━━ ✦❘༻◎༺❘✦ ━━━━━═╗  
 ⚡ ᴘᴏᴡᴇʀᴇᴅ ᴛᴏ ᴅᴏ ᴡʜᴀᴛ ᴏᴛʜᴇʀs ᴄᴀɴ'ᴛ  
-📚 ᴄᴏᴜʀsᴇs • ʟɪɴᴋs • ᴀᴄᴄᴇss — ᴀʟʟ ᴀᴛ ᴏɴᴇ ᴛᴏᴜᴄʜ  
+
 🔑 ғᴀsᴛ • ᴄʟᴇᴀɴ • ᴜɴʟɪᴍɪᴛᴇᴅ  
 ╚═━━━━━ ✦❘༻◎༺❘✦ ━━━━━═╝  
 
-👤 ᴏᴡɴᴇʀ → <a href="https://t.me/zhonsnowchatbbot">𝙰𝙳𝙼𝙸𝙽 👤</a>
+**<blockquote>⭐OWNER : <a href="https://t.me/zhonsnowchatbbot">Aᴅᴍɪɴ </a>⭐</blockquote>**
 """
 
 FORCE_MSG = """
