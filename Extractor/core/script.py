@@ -6,14 +6,13 @@ from config import ADMIN_BOT_USERNAME
 
 START_TXT = """
 **<blockquote>⫸ ʜᴇʏ {}</blockquote>**  
-
 ╔═━━━━━ ✦❘༻◎༺❘✦ ━━━━━═╗  
 ⚡ ᴘᴏᴡᴇʀᴇᴅ ᴛᴏ ᴅᴏ ᴡʜᴀᴛ ᴏᴛʜᴇʀs ᴄᴀɴ'ᴛ  
 
 🔑 ғᴀsᴛ • ᴄʟᴇᴀɴ • ᴜɴʟɪᴍɪᴛᴇᴅ  
 ╚═━━━━━ ✦❘༻◎༺❘✦ ━━━━━═╝  
 
-**<blockquote>⭐OWNER : <a href="https://t.me/zhonsnowchatbbot">Aᴅᴍɪɴ </a>⭐</blockquote>**
+**<blockquote>⭐ OWNER : <a href="https://t.me/zhonsnowchatbbot">Aᴅᴍɪɴ </a> ⭐</blockquote>**
 """
 
 FORCE_MSG = """
