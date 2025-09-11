@@ -8,7 +8,7 @@ from Crypto.Util.Padding import unpad
 from base64 import b64decode
 from pyrogram import filters
 import cloudscraper
-from Extractor import app, LOGGER
+#from Extractor import app, LOGGER
 from Extractor.core.utils import forward_to_log
 from Extractor import app
 import os
