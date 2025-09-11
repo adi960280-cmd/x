@@ -292,17 +292,18 @@ async def appex_v3_txt(app, message, api, name):
                 FFF = "COURSE-ID  -  COURSE NAME\n\n"
                 
                 valid_ids = []
-                if"data" in j1 and j1["data"]:
+                if "data" in j1 and j1["data"]:
                     for ct in j1["data"]:
-                    	i = ct.get("id")
-                    	cn = ct.get("course_name")
-                    	start = ct.get("start_date")
-                     	end = ct.get("end_date")
-                     	pricing = ct.get("price")
-                     	thumbnail = ct.get("course_thumbnail")
-                    	
-                    	FFF += f"**{i}   -   {cn}**\n\n"
-                     	valid_ids.append(i)
+                        i = ct.get("id")
+                        cn = ct.get("course_name")
+                        start = ct.get("start_date")
+                        end = ct.get("end_date")
+                        pricing = ct.get("price")
+                        thumbnail = ct.get("course_thumbnail")
+                        
+                        FFF += f"**{i}   -   {cn}**\n\n"
+                        valid_ids.append(i)
+
                 else:
                 	
                 	await message.reply_text("No course found in ID")
