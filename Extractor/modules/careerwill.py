@@ -12,6 +12,7 @@ from config import CHANNEL_ID,THUMB_URL,BOT_TEXT
 from Extractor import app
 import textwrap
 from datetime import datetime
+import pytz
 
 
 requests = cloudscraper.create_scraper()
