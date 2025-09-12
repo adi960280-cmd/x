@@ -204,11 +204,15 @@ async def career_will(app: Client, message: Message):
             now = datetime.now(tz)
             
             data = {
-                "email": email,
-                "password": password,
+                "userid": email,
+                "pwd": password,
                 "deviceType": "web",
-                "deviceDateTime": now.isoformat(),
+                "deviceModel": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
+                "deviceVersion": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
+                "deviceIMEI": "",
+                "deviceDateTime": now.isoformat()
                 "timezone": "Asia/Kolkata"
+                "email": email,
             }
 
             login_url = "https://wbspec.crwilladmin.com/api/v1/login"
