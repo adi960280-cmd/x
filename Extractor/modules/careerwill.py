@@ -203,7 +203,7 @@ async def career_will(app: Client, message: Message):
                 "deviceToken": "fake_device_token"
             }
 
-            login_url = "https://elearn.crwilladmin.com/api/v9/login-other"
+            login_url = "https://wbspec.crwilladmin.com/api/v1/login"
             response = requests.post(login_url, headers=headers, json=data)
             token = response.json()["data"]["token"]
             success_msg = (
@@ -216,7 +216,7 @@ async def career_will(app: Client, message: Message):
 
         # Fetch Batches
         headers = {
-            "Host": "elearn.crwilladmin.com",
+            "Host": "wbspec.crwilladmin.com",
             "appver": "107",
             "apptype": "android",
             "usertype": "2",
