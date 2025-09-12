@@ -240,22 +240,35 @@ async def career_will(app: Client, message: Message):
 
         # Fetch Batches
         headers = {
-            "Host": "elearn.crwilladmin.com",
-            "appver": "107",
-            "apptype": "android",
-            "usertype": "2",
+            "Host": "wbspec.crwilladmin.com",
+            "accept": "application/json, text/plain, */*",
+            "appver": "1",
+            "apptype": "web",
             "token": token,
-            "cwkey": "+HwN3zs4tPU0p8BpOG5ZlXIU6MaWQmnMHXMJLLFcJ5m4kWqLXGLpsp8+2ydtILXy",
-            "content-type": "application/json; charset=UTF-8",
-            "accept-encoding": "gzip",
-            "user-agent": "okhttp/5.0.0-alpha.2"
-        }
+            "cwkey": "Qw4NwDs7nEZ6BukUATJqKMeJdzzVzS4xrTjN0zDjcuI=",
+            "content-type": "application/json",
+            "origin": "https://web.careerwill.com",
+            "user-agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                           "AppleWebKit/537.36 (KHTML, like Gecko) "
+                           "Chrome/140.0.0.0 Safari/537.36")
+            }
+    
 
-        batch_url = "https://elearn.crwilladmin.com/api/v9/my-batch"
-        response = requests.get(batch_url, headers=headers)
+        batches_url = "https://wbspec.crwilladmin.com/api/v1/batches"
+        batches_resp = requests.get(batches_url, headers=headers)
+        batches_json = batches_resp.json()
+        await message.reply_text(f"📂 Batches fetched:\n{batches_json}")
         
-        batches = response.json()["data"]["batchData"]
+        batches = batches_json.get("data", {}).get("batchData", [])
+        if not batches:
+            await message.reply_text("❌ No batches found.")
+            return
+
         msg = "📚 <b>Available Batches</b>\n\n"
+        for b in batches:
+            msg += f"<code>{b['id']}</code> - <b>{b['batchName']}</b>\n"
+
+        await message.reply_text(msg)
         for b in batches:
             msg += f"<code>{b['id']}</code> - <b>{b['batchName']}</b>\n"
 
