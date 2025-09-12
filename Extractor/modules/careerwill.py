@@ -212,11 +212,14 @@ async def career_will(app: Client, message: Message):
                 await message.reply_text("❌ Login failed — server response:\n" + str(resp_json))
                 return 
 
-            success_msg = (
-                "✅ <b>CareerWill Login Successful</b>\n\n"
-                f"🆔 <b>Credentials:</b> <code>{email}*{password}</code>\n"
-                f"🔑 <b>Token:</b> <code>{token[:60]}...</code>"y
-            )
+            success_msg = textwrap.dedent(f"""
+                ✅ <b>CareerWill Login Successful</b>
+                
+                🆔 <b>Credentials:</b> <code>{email}*{password}</code>
+               🔑 <b>Token:</b> <code>{token[:60]}...</code>
+               
+            """)
+            
             await message.reply_text(success_msg)
         else:
             token = raw_text
