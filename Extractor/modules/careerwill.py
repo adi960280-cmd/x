@@ -202,16 +202,18 @@ async def career_will(app: Client, message: Message):
             
             tz = pytz.timezone("Asia/Kolkata")
             now = datetime.now(tz)
-            
+
+            device_datetime = now.strftime("%Y-%m-%d %H:%M:%S")  # server-friendly format
+
             data = {
                 "userid": email,
                 "pwd": password,
                 "deviceType": "web",
                 "deviceModel": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
                 "deviceVersion": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36",
-                "deviceIMEI": "",
-                "deviceDateTime": now.isoformat(),
-                "timezone": "Asia/Kolkata"
+                "deviceIMEI": "fake_imei_123456",
+                "deviceDateTime": device_datetime,
+                "timezone": "+05:30"
             }
 
             login_url = "https://wbspec.crwilladmin.com/api/v1/login"
